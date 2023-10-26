@@ -254,65 +254,109 @@ header .search-bar-container label:hover{
 .home .controls .vid-btn.active{
     background: var(--orange);
 }
+/* hotels*/
 
-/* packages */
-
-.packages .box-container{
+.hotels .box-container{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
-.packages .box-container .box{
-    flex: 1 1 30rem;
+.hotels .box-container .box{
+    flex: 1 1 35rem;
     border-radius: .5rem;
     overflow: hidden;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
 }
 
-.packages .box-container .box img{
+.hotels .box-container .box img{
     height: 25rem;
     width: 100%;
     object-fit: cover;
 }
 
-.packages .box-container .box .content{
+.hotels .box-container .box .content{
     padding: 2rem;
 }
 
-.packages .box-container .box .content h3{
+.hotels .box-container .box .content h3{
     font-size: 2rem;
     color: #333;
 }
 
-.packages .box-container .box .content h3 i{
+.hotels .box-container .box .content h3 i{
     color: dodgerblue;
 }
 
-.packages .box-container .box .content p{
+.hotels .box-container .box .content p{
     font-size: 1.7rem;
     color: #666;
     padding: 1rem 0;
 }
 
-.packages .box-container .box .content .stars i{
+.hotels .box-container .box .content .stars i{
     font-size: 1.7rem;
     color: var(--orange);
 }
 
-.packages .box-container .box .content .price{
+.hotels .box-container .box .content .price{
     font-size: 2rem;
     color: #333;
     padding-top: 1rem;
 }
 
-.packages .box-container .box .content .price span{
+.hotels .box-container .box .content .price span{
     color: #666;
     font-size: 1.5rem;
     text-decoration: line-through;
 }
 
-/*service*/
+
+
+
+
+
+/* packages  */
+
+.packages .review-slider{
+    padding-bottom: 2rem;
+}
+
+.packages .box{
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.packages .box h3{
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.packages .box p{
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.packages .swiper-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.packages .swiper-wrapper .slider{
+    overflow: hidden;
+    box-shadow: 1rem 3rem 2rem  rgba(0,0,0,.3);
+    border: 1rem solid #fff;
+    border-radius: .7rem;
+    flex: 1 1 24rem;
+    height: 32rem;
+    position: relative;
+}
+
+
 
 .services .box-container{
     display: flex;
