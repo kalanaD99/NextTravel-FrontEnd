@@ -1,8 +1,11 @@
 let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 let formBtn = document.querySelector('#login-btn');
+let formBtn2 = document.querySelector('#signup-btn');
 let loginForm = document.querySelector('.login-form-container');
+let signupForm = document.querySelector('.signup-container');
 let formClose = document.querySelector('#form-close');
+let signFormClose = document.querySelector('#signUpForm-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
@@ -13,6 +16,7 @@ window.onscroll =()=>{
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
+    signupForm.classList.remove('active');
 }
 
 menu.addEventListener('click',()=>{
@@ -28,9 +32,15 @@ searchBtn.addEventListener('click',()=>{
 formBtn.addEventListener('click',()=>{
     loginForm.classList.add('active');
 });
+formBtn2.addEventListener('click',()=>{
+    signupForm.classList.add('active');
+});
 
 formClose.addEventListener('click',()=>{
     loginForm.classList.remove('active');
+});
+signFormClose.addEventListener('click',()=>{
+    signupForm.classList.remove('active');
 });
 
 videoBtn.forEach(btn =>{
