@@ -74,3 +74,40 @@ function search(){
         }
     })
 }
+
+
+function Delete(){
+    $.ajax({
+        type: "DELETE",
+        url: "" + cId,
+        success: (response) => {
+            alert("Delete Success..!")
+            getAll()
+        },
+
+        error: function (error) {
+            alert("Id not found or can't delete Customer")
+        }
+    })
+}
+
+function getAll(){
+    $('#tBody').empty();
+    $.ajax({
+        type: "Get",
+        url: "",
+        success: (response) => {
+            response?.map(
+                (data) => {
+                    let row = `<tr><td>${data.customerID}</td><td>${data.name}</td><td>${data.address}</td><td>${data.email}</td><td>${data.address}</td><td>${data.nic}</td>
+                                        <td>${data.username}</td><td>${data.password}</td><td>${data.profilepic}</td></tr>`;
+                    $('#tBody').append(row);
+                }
+            )
+        },
+
+        error: function (error) {
+            alert("Guide Not Found..")
+        }
+    })
+}
