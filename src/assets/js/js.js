@@ -9,6 +9,22 @@ let signFormClose = document.querySelector('#signUpForm-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
+const imgDiv =document.querySelector('.user-img');
+const img = document.querySelector('#photo');
+const file =document.querySelector('#file');
+const uploadBtn =document.querySelector('#uploadBtn');
+
+file.addEventListener('change',function (){
+    const chooseFile = this.file[0];
+    if (chooseFile){
+        const reader = new FileReader();
+
+        reader.addEventListener('load' , function (){
+            img.setAttribute('src' , reader.result);
+        })
+        reader.readAsDataURL(chooseFile);
+    }
+})
 
 window.onscroll =()=>{
     searchBtn.classList.remove('fa-times');
