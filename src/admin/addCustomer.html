@@ -16,50 +16,50 @@
 
 
 <br>
-<br>
+<h2>Customer Form</h2>
 <br>
 <br>
 <form class="row g-3 needs-validation container-fluid" novalidate>
     <div class="col-md-4">
-        <label class="form-label" for="customerId">Customer ID</label>
-        <input class="form-control" id="customerId" required type="text" >
+        <label class="form-label" for="txtCustomerId">Customer ID</label>
+        <input class="form-control" id="txtCustomerId" required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="name">Name</label>
-        <input class="form-control" id="name" required type="text" >
+        <label class="form-label" for="txtName">Name</label>
+        <input class="form-control" id="txtName" required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="email">Email</label>
-        <input class="form-control"  id="email" required type="text" >
+        <label class="form-label" for="txtEmail">Email</label>
+        <input class="form-control"  id="txtEmail" required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="address">Address</label>
-        <input class="form-control" id="address" required type="text" >
+        <label class="form-label" for="txtAddress">Address</label>
+        <input class="form-control" id="txtAddress" required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="nic">NIC</label>
-        <input class="form-control" id="nic" required type="text" >
+        <label class="form-label" for="txtNic">NIC</label>
+        <input class="form-control" id="txtNic" required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="username">Username</label>
+        <label class="form-label" for="txtUsername">Username</label>
         <div class="input-group has-validation">
             <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input aria-describedby="inputGroupPrepend" class="form-control" id="username" required
+            <input aria-describedby="inputGroupPrepend" class="form-control" id="txtUsername" required
                    type="text">
             <div class="invalid-feedback">
                 Please choose a username.
@@ -67,8 +67,8 @@
         </div>
     </div>
     <div class="col-md-4">
-        <label class="form-label" for="password">Password</label>
-        <input class="form-control"  id="password"  required type="text" >
+        <label class="form-label" for="txtPassword">Password</label>
+        <input class="form-control"  id="txtPassword"  required type="text" >
         <div class="valid-feedback">
             Looks good!
         </div>
@@ -115,7 +115,7 @@
     <button type="Save" class="btn btn-outline-primary" onclick="save">Save</button>
     <button type="Update" class="btn btn-outline-success" onclick="update">Update</button>
     <button type="Delete" class="btn btn-outline-danger" onclick="Delete">Delete</button>
-    <button type="Search" class="btn btn-outline-secondary" onclick="search">Search</button>
+    <button type="Search" class="btn btn-outline-secondary" onclick="Search">Search</button>
     <button type="Get All" class="btn btn-outline-warning" onclick="getAll">Get All</button>
 </div>
 
@@ -139,6 +139,7 @@
     </tbody>
 </table>
 
-
+<script src="/assets/js/jQuery/jquery-3.6.4.min.js"></script>
+<script src="/assets/js/util/customer.js"></script>
 </body>
 </html>
