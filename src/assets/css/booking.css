@@ -1,0 +1,13 @@
+#menu{
+    height: 100vh;
+    background: #d5dada;
+}
+.container{
+    margin-top: 15px;
+    border-radius: 5px;
+    background: #edeff1;
+}
+.container span{
+    color: #1c9a05;
+    font-weight: bolder;
+}
