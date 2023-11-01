@@ -11,3 +11,8 @@
     color: #1c9a05;
     font-weight: bolder;
 }
+#img {
+    position: relative;
+    right: 150px;
+    bottom: 20px;
+}

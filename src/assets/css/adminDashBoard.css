@@ -177,9 +177,9 @@ a:hover {
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    color: #f1a501;
+    color: #050505;
     transition: 0.3s;
-    background: rgba(241, 165, 1, 0.22);
+    background: rgba(126, 201, 14, 0.22);
     padding: 10px 15px;
     border-radius: 4px;
 }
@@ -187,7 +187,7 @@ a:hover {
 .sidebar-nav .nav-link i {
     font-size: 16px;
     margin-right: 10px;
-    color: #f1a501;
+    color: rgba(126, 201, 14, 0.91);
 }
 
 .sidebar-nav .nav-link.collapsed {
@@ -202,11 +202,11 @@ a:hover {
 
 .sidebar-nav .nav-link:hover {
     color: rgb(51, 50, 50);
-    background: rgb(241, 165, 1);
+    background: rgba(126, 201, 14, 0.91);
 }
 
 .sidebar-nav .nav-link:hover i {
-    color: rgb(241, 165, 1);
+    color: rgba(126, 201, 14, 0.91);
 }
 
 
