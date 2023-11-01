@@ -1,14 +1,22 @@
 
 body {
 
-    background: rgb(248, 249, 248);
+    background: rgb(192, 232, 192);
     color: rgba(68, 68, 68, 0.44);
 }
 a {
-    color: rgba(241, 165, 1, 0.87);
+    color: rgba(131, 154, 22, 0.87);
     text-decoration: none;
 }
 
+header{
+    background: rgba(255, 255, 255, 0.87);
+}
+header .navbar-text{
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+}
 card{
 
 }
