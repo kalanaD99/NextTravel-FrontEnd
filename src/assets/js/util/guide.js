@@ -1,33 +1,156 @@
+getAll();
+
+var isMatchGuideId = false;
+var isMatchGuideName = false;
+var isMatchGuideAddress = false;
+var isMatchGuideTelNo = false;
+var isMatchGuideExperience = false;
+var isMatchGuideManDayValue = false;
+
+
+
+var regExGuideID = /^(G00-)[0-9]{3,4}$/
+
+$('#guideId').keyup(function () {
+    var val = $('#guideId').val();
+    if (regExGuideID.test(val)) {
+        $('#guideId').css('border', '2px solid green')
+        $('#idError').text("");
+        isMatchGuideId = true;
+    } else {
+        $('#guideId').css("border", "2px solid red");
+        $('#idError').text("wrong format : G00-001");
+        isMatchGuideId = false;
+    }
+});
+
+
+var regExGuideName = /^[a-zA-Z]{3,15}$/
+
+$("#guideName").keyup(function () {
+    var name = $("#guideName").val();
+    if (regExGuideName.test(name)) {
+        $("#guideName").css("border", "2px solid green");
+        $("#nameError").text("");
+        isMatchGuideName = true;
+    } else {
+        $("#guideName").css("border", "2px solid red");
+        $("#nameError").text("wrong format : A-Z or a-z");
+        isMatchGuideName = false;
+    }
+});
+
+
+var regExAddress = /^[a-zA-Z]{3,25}$/;
+$('#address').keyup(function (){
+    let address = $('#address').val();
+    if (regExAddress.test(address)){
+        $('#address').css("border", "2px solid green");
+        $('#addressError').text("");
+        isMatchGuideAddress=true;
+    }else {
+        $('#address').css("border", "2px solid red");
+        $('#addressError').text("wrong format : a-z or A-Z");
+        isMatchGuideAddress=false;
+    }
+
+});
+
+
+var regExGuideNumber = /^(?:\+94|0)[1-9]\d{8}$/;
+
+$('#number').keyup(function (){
+    let num = $('#number').val();
+    if (regExGuideNumber.test(num)){
+        $('#number').css("border", "2px solid green");
+        $('#telNoError').text("");
+        isMatchGuideTelNo=true;
+    }else {
+        $('#number').css("border", "2px solid red");
+        $('#telNoError').text("wrong format : +94769151600 | 0769151600");
+        isMatchGuideTelNo=false;
+    }
+
+});
+
+
+
+var regExGuideExperience = /^[A-z ]{3,20}$/;
+$('#experience').keyup(function (){
+    let exp = $('#experience').val();
+    if (regExGuideExperience.test(exp)){
+        $('#experience').css("border", "2px solid green");
+        $('#ExpError').text("");
+        isMatchGuideExperience=true;
+    }else {
+        $('#experience').css("border", "2px solid red");
+        $('#ExpError').text("wrong format : a-z or A-Z");
+        isMatchGuideExperience=false;
+    }
+
+});
+
+
+var regExManDayValue = /^[0-9.]{2,10}$/;
+$('#manDayValue').keyup(function (){
+    let value = $('#manDayValue').val();
+    if (regExManDayValue.test(value)){
+        $('#manDayValue').css("border", "2px solid green");
+        $('#manDayValueError').text("");
+        isMatchGuideManDayValue=true;
+    }else {
+        $('#manDayValue').css("border", "2px solid red");
+        $('#manDayValueError').text("wrong format : 100.00 or 100");
+        isMatchGuideManDayValue=false;
+    }
+
+});
+
+
+
+
+
 
 /* Save */
 
 function save(){
-    let guideId = $('#guideId').val();
-    let guideName = $('#guideName').val();
-    let address = $('#address').val();
-    let gender = $('#gender').val();
-    let number = $('#number').val();
-    let experience = $('#experience').val();
-    let manDayValue = $('#manDayValue').val();
-    let guideImage = $('#guideImage').val();
-    let nicImage = $('#nicImage').val();
+
+    if (!isMatchGuideId) {
+    } else if (!isMatchGuideName){
+    } else if (!isMatchGuideAddress) {
+    } else if (!isMatchGuideTelNo) {
+    } else if (!isMatchGuideExperience){
+    } else if (!isMatchGuideManDayValue){
+    }else {
+
+        let guideId = $('#guideId').val();
+        let guideName = $('#guideName').val();
+        let address = $('#address').val();
+        let gender = $('#gender').val();
+        let number = $('#number').val();
+        let experience = $('#experience').val();
+        let manDayValue = $('#manDayValue').val();
+        let guideImage = $('#guideImage')[0].files[0];
+        let nicImage = $('#nicImage')[0].files[0];
 
 
-    $.ajax({
-        type: "POST",
-        url: "",
-        data: {guideId:guideId, guideName:guideName, address:address, gender:gender, number:number,
-            experience:experience, manDayValue:manDayValue , guideImage:guideImage ,  nicImage
-        },
-        success: (response) => {
-            console.log(response)
-            getAll()
-        },
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/guideService/api/v1/guide",
+            data: {guideId:guideId, guideName:guideName, address:address, gender:gender, number:number,
+                experience:experience, manDayValue:manDayValue , guideImage:guideImage ,  nicImage
+            },
+            success: (response) => {
+                console.log(response)
+                getAll()
+            },
 
-        error: function (error) {
-            console.log(error)
-        }
-    })
+            error: function (error) {
+                console.log(error)
+            }
+        })
+
+    }
 }
 
 
@@ -35,31 +158,41 @@ function save(){
 
 function update() {
 
-    let guideId = $('#guideId').val();
-    let guideName = $('#guideName').val();
-    let address = $('#address').val();
-    let gender = $('#gender').val();
-    let number = $('#number').val();
-    let experience = $('#experience').val();
-    let manDayValue = $('#manDayValue').val();
-    let guideImage = $('#guideImage').val();
-    let nicImage = $('#nicImage').val();
+    if (!isMatchGuideId) {
+    } else if (!isMatchGuideName){
+    } else if (!isMatchGuideAddress) {
+    } else if (!isMatchGuideTelNo) {
+    } else if (!isMatchGuideExperience){
+    } else if (!isMatchGuideManDayValue){
+    }else {
 
-    $.ajax({
-        type: "PUT",
-        url: "",
-        data: {guideId:guideId, guideName:guideName, address:address, gender:gender, number:number,
-            experience:experience, manDayValue:manDayValue , guideImage:guideImage ,  nicImage
-        },
-        success: (response) => {
-            console.log(response)
-            getAll()
-        },
+        let guideId = $('#guideId').val();
+        let guideName = $('#guideName').val();
+        let address = $('#address').val();
+        let gender = $('#gender').val();
+        let number = $('#number').val();
+        let experience = $('#experience').val();
+        let manDayValue = $('#manDayValue').val();
+        let guideImage = $('#guideImage')[0].files[0];
+        let nicImage = $('#nicImage')[0].files[0];
 
-        error: function (error) {
-            console.log(error)
-        }
-    })
+        $.ajax({
+            type: "PUT",
+            url: "http://localhost:8080/guideService/api/v1/guide",
+            data: {guideId:guideId, guideName:guideName, address:address, gender:gender, number:number,
+                experience:experience, manDayValue:manDayValue , guideImage:guideImage ,  nicImage
+            },
+            success: (response) => {
+                console.log(response)
+                getAll()
+            },
+
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    }
+
 }
 
 
@@ -69,7 +202,7 @@ function search() {
     let guideId = $('#guideId').val();
     $.ajax({
         type: "GET",
-        url: "" + guideId,
+        url: "http://localhost:8080/guideService/api/v1/guide" + guideId,
         async: true,
         success: (response) => {
             $('#guideId').val(response.guideId);
@@ -79,8 +212,6 @@ function search() {
             $('#number').val(response.number);
             $('#experience').val(response.experience);
             $('#manDayValue').val(response.manDayValue);
-            $('#guideImage').val(response.guideImage);
-            $('#nicImage').val(response.nicImage);
         },
 
         error: function (error) {
@@ -92,8 +223,6 @@ function search() {
             $('#number').val(" ");
             $('#experience').val(" ");
             $('#manDayValue').val(" ");
-            $('#guideImage').val(" ");
-            $('#nicImage').val(" ");
             alert("Guide Not Found..!");
         }
     })
@@ -106,7 +235,7 @@ function Delete() {
     let guideId = $('#guideId').val();
     $.ajax({
         type: "DELETE",
-        url: "" + guideId,
+        url: "http://localhost:8080/guideService/api/v1/guide" + guideId,
         success: (response) => {
             alert("Delete Success..!")
             getAll()
@@ -125,12 +254,12 @@ function getAll(){
     $('#tBody').empty();
     $.ajax({
         type: "Get",
-        url: "",
+        url: "http://localhost:8080/guideService/api/v1/guide",
         success: (response) => {
             response?.map(
                 (data) => {
                     let row = `<tr><td>${data.guideId}</td><td>${data.guideName}</td><td>${data.address}</td><td>${data.gender}</td><td>${data.number}</td><td>${data.experience}</td>
-                                <td>${data.manDayValue}</td><td>${data.guideImage}</td><td>${data.nicImage}</td></tr>`;
+                                <td>${data.manDayValue}</td></tr>`;
                     $('#tBody').append(row);
                 }
             )
@@ -140,4 +269,99 @@ function getAll(){
             alert("Guide Not Found..")
         }
     })
+    loadTextFieldValues()
 };
+
+
+function loadTextFieldValues(){
+    $("#tBody>tr").on("click",function (){
+        let guide_id = $(this).children().eq(0).text();
+        let guide_Name = $(this).children().eq(1).text();
+        let guide_Address = $(this).children().eq(2).text();
+        let guide_Gender = $(this).children().eq(3).text();
+        let guide_Number = $(this).children().eq(4).text();
+        let guide_Experience = $(this).children().eq(5).text();
+        let guide_Day_Value = $(this).children().eq(6).text();
+
+
+        $("#guideId").val(guide_id);
+        $("#guideName").val(guide_Name);
+        $("#address").val(guide_Address);
+        $("#gender").val(guide_Gender);
+        $("#number").val(guide_Number);
+        $("#experience").val(guide_Experience);
+        $("#manDayValue").val(guide_Day_Value);
+    });
+
+}
+
+
+
+//Auto Generate id
+function autoGenerateId() {
+    $("#guideId").val("G-001");
+    $.ajax({
+        url:"",
+        method:"GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            let tempid = parseInt(id.split("-")[1]);
+            tempid = tempid + 1;
+            if (tempid <= 9) {
+                $("#guideId").val("G-00" + tempid);
+            } else if (tempid <= 99) {
+                $("#guideId").val("G-0" + tempid);
+            } else {
+                $("#guideId").val("G-" + tempid);
+            }
+        },
+
+        error:function (error){
+            console.log(error);
+        }
+    })
+}
+
+
+
+//----------------------Load Guide Details-----------------------------------------
+
+$("#guideId").click(function (){
+    var searchGuide=$("#guideId").val();
+    $.ajax({
+        url:"http://localhost:8989/nextTravelPVTLtdGuideService/api/v1/guide/searchGuide/?guide_id="+searchGuide,
+        method:"GET",
+        contentType:"application/json",
+        dataType:"json",
+        success:function (res){
+            $("#guideName").val(res.guideName);
+            $("#number").val(res.number);
+            $("#manDayValue").val(res.manDayValue);
+        },
+        error:function (error){
+            console.log(error);
+        }
+    })
+});
+
+//------------------------Select Guide or not--------------------------------
+
+/*$("#").click(function (){
+    let selectedOption=$(this).val();
+
+    if (selectedOption === "yes"){
+        $.ajax({
+            url:bookingBaseUrl+"guide/yesGuide",
+            method:"GET",
+            dataType:"json",
+            success:function (res){
+                $("#guide_id").val(res.guideid);
+            },
+            error:function (error){
+                console.log(error);
+            }
+        });
+    }
+})*/
